@@ -30,6 +30,10 @@
     "image": "assets/images/showroom.jpg",
     "telephone": "+55-12-99260-6661",
     "url": "https://grandelarmoveis.com.br",
+    "sameAs": [
+      "https://www.instagram.com/agrandelarmoveis/",
+      "https://www.facebook.com/p/Grande-Lar-M%C3%B3veis-Taubat%C3%A9-61581548402248/"
+    ],
     "priceRange": "$$",
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -68,25 +72,57 @@
 </head>
 <body>
 
-  <!-- TOP BAR -->
+  <!-- TOP BAR (LUXURY CONCIERGE & SHOWROOM BAR) -->
   <div class="topbar">
     <div class="container topbar-content">
       <div class="topbar-left">
-        <span class="topbar-badge">★ 4.8 no Google (72 Avaliações Reais)</span>
-        <div class="topbar-stores">
-          <span>Showrooms em Taubaté: <strong>Vila São Geraldo</strong> & <strong>Belém</strong> (a 300m da Dutra)</span>
-        </div>
+        <a href="#avaliacoes" class="topbar-badge" title="Ver avaliações reais de clientes no Google">
+          <svg class="topbar-star-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span><strong>4.8 no Google</strong> <span class="topbar-badge-sub">(72 Avaliações)</span></span>
+        </a>
+        <span class="topbar-divider" aria-hidden="true"></span>
+        <a href="#lojas" class="topbar-stores" title="Conhecer nossos 2 Showrooms em Taubaté">
+          <svg class="topbar-icon-gold" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>Showrooms em Taubaté: <strong>Vila São Geraldo</strong> &amp; <strong>Belém</strong> <em class="topbar-dutra">(a 300m da Dutra)</em></span>
+        </a>
       </div>
       <div class="topbar-right">
-        <span class="topbar-delivery-tag">🚚 Entrega Própria em Taubaté & Região</span>
+        <span class="topbar-delivery-tag">
+          <svg class="topbar-icon-gold" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+          <span>Entrega &amp; Montagem Própria</span>
+        </span>
+        <span class="topbar-divider" aria-hidden="true"></span>
+        <a href="https://www.instagram.com/agrandelarmoveis/" target="_blank" rel="noopener noreferrer" class="topbar-link topbar-insta-link" title="Siga @agrandelarmoveis no Instagram">
+          <svg class="topbar-icon-gold" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>@agrandelarmoveis</span>
+        </a>
+        <span class="topbar-divider" aria-hidden="true"></span>
         <a href="https://wa.me/5512992606661?text=Ol%C3%A1%20Grande%20Lar!%20Estou%20no%20site%20e%20gostaria%20de%20um%20atendimento%20personalizado." target="_blank" class="topbar-link" title="Falar no WhatsApp da Loja">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <svg class="topbar-icon-gold" width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.301-.15-1.782-.879-2.058-.979-.276-.1-.476-.15-.676.15-.2.301-.776.979-.952 1.18-.175.2-.351.226-.652.075-.3-.15-1.267-.467-2.414-1.49-1.077-.96-1.805-2.146-2.016-2.508-.21-.362-.022-.558.128-.707.135-.135.301-.351.451-.527.151-.175.201-.301.301-.501.1-.2.05-.376-.025-.526-.075-.15-.676-1.63-.927-2.232-.245-.588-.493-.509-.676-.518l-.577-.01c-.2 0-.526.075-.802.376-.276.301-1.053 1.028-1.053 2.508s1.078 2.908 1.228 3.109c.151.2 2.122 3.24 5.14 4.543 3.018 1.303 3.018.868 3.568.818.55-.05 1.782-.728 2.032-1.429.25-.702.25-1.304.175-1.429-.075-.126-.275-.201-.576-.351z"/>
           </svg>
-          (12) 99260-6661
+          <span>(12) 99260-6661</span>
         </a>
-        <a href="https://wa.me/5512992606661?text=Ol%C3%A1%20equipe%20Grande%20Lar!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20showroom%20para%20conhecer%20os%20sof%C3%A1s%20de%20perto." target="_blank" class="vip-showroom-btn" title="Agendar Visita ao Showroom">
-          📍 Visitar Showroom
+        <a href="https://wa.me/5512992606661?text=Ol%C3%A1%20equipe%20Grande%20Lar!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20showroom%20para%20conhecer%20os%20sof%C3%A1s%20de%20perto." target="_blank" class="vip-showroom-btn" title="Agendar Visita VIP ao Showroom">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z"/>
+          </svg>
+          <span>Visitar Showroom</span>
+          <svg class="vip-btn-arrow" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7M7 7h10v10"/>
+          </svg>
         </a>
       </div>
     </div>
@@ -102,27 +138,31 @@
         </div>
         <div class="brand-text-group">
           <div class="brand-title">GRANDE LAR <span>MÓVEIS</span></div>
-          <span class="brand-tagline">Conforto & Sofisticação • Taubaté/SP</span>
+          <span class="brand-tagline"><i class="brand-diamond">◆</i> Conforto &amp; Sofisticação • Taubaté/SP</span>
         </div>
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Navegação Principal">
         <a href="#inicio" class="nav-link">Início</a>
-        <a href="#personalizador" class="nav-link">Simulador & Tecidos</a>
+        <a href="#personalizador" class="nav-link nav-link-featured">
+          <span class="nav-featured-dot"></span>
+          Simulador &amp; Tecidos
+        </a>
         <a href="#catalogo" class="nav-link">Catálogo</a>
         <a href="#diferenciais" class="nav-link">Diferenciais</a>
         <a href="#lojas" class="nav-link">Nossas 2 Lojas</a>
-        <a href="#avaliacoes" class="nav-link">Avaliações 4.8 ★</a>
+        <a href="#avaliacoes" class="nav-link">Avaliações <span class="nav-star">4.8 ★</span></a>
         <a href="#duvidas" class="nav-link">Dúvidas</a>
       </nav>
 
       <!-- Action Buttons -->
       <div class="nav-actions">
         <a href="https://wa.me/5512992606661?text=Ol%C3%A1%20Grande%20Lar%20M%C3%B3veis!%20Estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20consultor%20de%20vendas%20para%20minha%20sala." target="_blank" class="btn-header-cta">
+          <span class="btn-header-cta-dot"></span>
           <span>Consultoria no WhatsApp</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
         <button class="mobile-menu-toggle" aria-label="Abrir Menu">
@@ -189,6 +229,10 @@
       <a href="#duvidas" class="drawer-link">
         <span>Dúvidas Frequentes (FAQ)</span>
         <span>→</span>
+      </a>
+      <a href="https://www.instagram.com/agrandelarmoveis/" target="_blank" rel="noopener noreferrer" class="drawer-link" style="color: var(--color-primary);">
+        <span>Instagram @agrandelarmoveis</span>
+        <span>↗</span>
       </a>
     </nav>
 

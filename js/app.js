@@ -8,6 +8,8 @@
 const STORE_DATA = {
   name: "Grande Lar Móveis",
   whatsappNumber: "5512992606661", // (12) 99260-6661
+  instagramUrl: "https://www.instagram.com/agrandelarmoveis/",
+  instagramHandle: "@agrandelarmoveis",
   googleRating: "4.8",
   reviewCount: "72",
   stores: [
