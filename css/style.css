@@ -408,6 +408,7 @@ ul {
 .brand-title span {
   background: linear-gradient(135deg, #c89b53 0%, #9b6e29 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   color: var(--color-gold);
   font-weight: 700;
