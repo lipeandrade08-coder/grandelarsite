@@ -377,9 +377,22 @@ function initHeroVideo() {
       window.removeEventListener("click", playOnTouch);
       window.removeEventListener("touchstart", playOnTouch);
     };
-    window.addEventListener("click", playOnTouch, { once: true });
-    window.addEventListener("touchstart", playOnTouch, { once: true });
+    window.addEventListener("click", playOnTouch, { once: true, passive: true });
+    window.addEventListener("touchstart", playOnTouch, { once: true, passive: true });
   });
+
+  if ("IntersectionObserver" in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          heroVideo.play().catch(() => {});
+        } else {
+          heroVideo.pause();
+        }
+      });
+    }, { threshold: 0.05 });
+    videoObserver.observe(heroVideo);
+  }
 }
 
 /* ==========================================================================
@@ -395,7 +408,7 @@ function initHeaderScroll() {
     } else {
       header.classList.remove("scrolled");
     }
-  });
+  }, { passive: true });
 }
 
 function initMobileDrawer() {
@@ -698,13 +711,13 @@ function renderProducts(category) {
 
   container.innerHTML = filtered.map(product => `
     <div class="product-card" data-id="${product.id}">
-      <div class="product-media">
-        <img src="${product.image}" alt="${product.name}" loading="lazy">
+      <div class="product-media" onclick="openQuickView(${product.id})" style="cursor: pointer;">
+        <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async">
         <div class="product-badge-group">
           <span class="product-badge ${product.badgeColor}">${product.badge}</span>
           ${product.isRealPhoto ? '<span class="product-badge real-photo">Showroom Real</span>' : ''}
         </div>
-        <button class="product-quickview-btn" onclick="openQuickView(${product.id})" title="Ver Detalhes do Produto">
+        <button class="product-quickview-btn" onclick="event.stopPropagation(); openQuickView(${product.id})" title="Ver Detalhes do Produto">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
             <circle cx="12" cy="12" r="3"></circle>

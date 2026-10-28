@@ -4,8 +4,6 @@
    Aesthetic: Warm Luxury, Contemporary Brazilian Showroom, High-Converting
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
-
 :root {
   /* Colors */
   --color-primary: #153831;       /* Deep Store Emerald */
@@ -80,6 +78,8 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -88,6 +88,7 @@ body {
   color: var(--color-text-body);
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 img {
@@ -2437,16 +2438,6 @@ ul {
 /* ==========================================================================
    ENHANCED FLOATING WHATSAPP & SONAR WAVES
    ========================================================================== */
-.floating-whatsapp {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 2200;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
 .bubble-status-dot {
   width: 8px;
   height: 8px;
@@ -2695,10 +2686,10 @@ ul {
   position: fixed;
   bottom: 26px;
   right: 26px;
-  z-index: 999;
+  z-index: 2050;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   filter: drop-shadow(0 6px 18px rgba(37, 211, 102, 0.4));
   transition: transform var(--trans-base);
 }
@@ -2882,7 +2873,7 @@ ul {
 }
 
 /* ==========================================================================
-   RESPONSIVE BREAKPOINTS
+   RESPONSIVE BREAKPOINTS (DESKTOP, TABLET & MOBILE LUXURY EXPERIENCE)
    ========================================================================== */
 @media (max-width: 1380px) {
   .topbar-dutra {
@@ -2906,7 +2897,7 @@ ul {
 
 @media (max-width: 1080px) {
   .topbar-delivery-tag,
-  .topbar-right .topbar-divider {
+  .topbar-right .topbar-divider:first-of-type {
     display: none;
   }
   .nav-links {
@@ -2915,6 +2906,10 @@ ul {
   .mobile-menu-toggle {
     display: flex;
   }
+  .product-quickview-btn {
+    opacity: 1;
+    transform: scale(1);
+  }
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2922,7 +2917,7 @@ ul {
     grid-template-columns: repeat(2, 1fr);
   }
   .customizer-wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .customizer-preview-col {
     border-right: none;
@@ -2933,16 +2928,16 @@ ul {
     padding: 24px;
   }
   .differentials-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .stores-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .reviews-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .vip-cards-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .footer-top {
     grid-template-columns: 1fr 1fr;
@@ -2950,51 +2945,331 @@ ul {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Compact Luxury Topbar on Mobile */
   .topbar {
+    padding: 6px 0;
+    font-size: 0.70rem;
+    overflow: hidden;
+  }
+  .topbar-content {
+    gap: 8px;
+  }
+  .topbar-stores,
+  .topbar-left .topbar-divider,
+  .topbar-delivery-tag,
+  .topbar-right .topbar-divider,
+  .topbar-link:not(.topbar-insta-link),
+  .topbar-insta-handle {
     display: none;
   }
-  .btn-header-cta span {
+  .topbar-insta-link {
+    padding: 4px 7px;
+    border-radius: var(--radius-full);
+    background: rgba(200, 155, 83, 0.14);
+    border: 1px solid rgba(200, 155, 83, 0.35);
+  }
+  .topbar-badge {
+    padding: 3px 9px;
+    font-size: 0.68rem;
+  }
+  .vip-showroom-btn {
+    padding: 3px 10px;
+    font-size: 0.64rem;
+    letter-spacing: 0.35px;
+  }
+
+  /* Mobile Header & Navbar */
+  .site-header {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .navbar,
+  .site-header.scrolled .navbar {
+    height: 66px;
+    gap: 8px;
+  }
+  .brand-logo {
+    gap: 8px;
+    min-width: 0;
+  }
+  .brand-logo-img-wrap {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+  .brand-title {
+    font-size: 0.98rem;
+    letter-spacing: 0;
+  }
+  .brand-tagline {
+    font-size: 0.43rem;
+    letter-spacing: 0.15px;
+    margin-top: 2px;
+  }
+  .nav-actions {
+    gap: 7px;
+  }
+  .cta-extra-text {
     display: none;
   }
   .btn-header-cta {
-    padding: 9px 12px;
+    padding: 7px 11px;
+    font-size: 0.72rem;
+    gap: 5px;
   }
+  .mobile-menu-toggle {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  /* Mobile Hero Section */
   .hero-section {
     min-height: auto;
-    padding: 36px 0 54px;
+    padding: 30px 0 42px;
   }
   .hero-bg-video {
-    opacity: 0.42;
+    opacity: 0.48;
+  }
+  .hero-badge-group {
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .hero-badge-stars,
+  .hero-badge-city,
+  .hero-badge-video-live {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+  }
+  .hero-title {
+    font-size: clamp(1.85rem, 7.6vw, 2.35rem);
+    line-height: 1.12;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+  }
+  .hero-subtitle {
+    font-size: 0.93rem;
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+  .hero-cta-group .btn-primary,
+  .hero-cta-group .btn-whatsapp-large {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 0.92rem;
   }
   .hero-trust-row {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding-top: 18px;
+  }
+  .trust-item-val {
+    font-size: 0.95rem;
+  }
+  .trust-item-label {
+    font-size: 0.68rem;
+    line-height: 1.25;
+  }
+
+  /* Features Strip */
+  .features-strip {
+    padding: 20px 0;
   }
   .features-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
-  .products-grid {
-    grid-template-columns: 1fr;
+  .feature-card {
+    align-items: center;
+  }
+
+  /* Sections & Typography */
+  .section {
+    padding: 52px 0;
+  }
+  .section-header {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: clamp(1.55rem, 6.2vw, 2rem);
+  }
+  .section-subtitle {
+    font-size: 0.92rem;
+  }
+
+  /* Interactive Customizer on Mobile */
+  .customizer-preview-col,
+  .customizer-controls-col {
+    padding: 18px 15px;
+  }
+  .preview-top-bar {
+    gap: 6px;
+  }
+  .preview-badge-status,
+  .preview-zoom-btn {
+    font-size: 0.71rem;
+    padding: 4px 10px;
+  }
+  .preview-image-container {
+    margin: 12px 0;
+  }
+  .preview-fabric-swatch-badge {
+    top: 8px;
+    left: 8px;
+    padding: 4px 10px 4px 4px;
+    font-size: 0.71rem;
+    gap: 6px;
+  }
+  .preview-fabric-swatch-badge img {
+    width: 24px;
+    height: 24px;
+  }
+  .preview-dimensions-overlay {
+    bottom: 8px;
+    right: 8px;
+    left: 8px;
+    justify-content: center;
+    font-size: 0.71rem;
+    padding: 5px 8px;
   }
   .fabric-swatches-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
   }
+  .fabric-swatch-item {
+    padding: 6px 4px;
+  }
+  .fabric-swatch-item .swatch-thumb {
+    width: 36px;
+    height: 36px;
+  }
+  .fabric-swatch-item .swatch-name {
+    font-size: 0.68rem;
+  }
+  .fabric-swatch-item .swatch-sub {
+    font-size: 0.60rem;
+  }
+  .btn-whatsapp-customizer {
+    font-size: 0.82rem;
+    padding: 13px 14px;
+    text-align: center;
+  }
+
+  /* Catalog Swipeable Filters & Grid */
+  .catalog-filters {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin-bottom: 22px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .catalog-filters::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-btn {
+    flex-shrink: 0;
+    font-size: 0.78rem;
+    padding: 7px 14px;
+  }
+  .products-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .product-info {
+    padding: 18px 16px;
+  }
+
+  /* Differentials & Stores */
   .differentials-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .diff-card {
+    padding: 22px 18px;
+  }
+  .store-media {
+    height: 190px;
+  }
+  .store-actions {
     grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* Google Rating & VIP Consultation */
+  .google-rating-banner {
+    padding: 18px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .google-banner-right,
+  .btn-google-rate {
+    width: 100%;
+    justify-content: center;
+  }
+  .vip-box {
+    padding: 26px 16px;
+    border-radius: var(--radius-lg);
+  }
+  .vip-cta-banner {
+    padding: 20px 16px;
+  }
+  .btn-whatsapp-vip {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.86rem;
+    padding: 13px 18px;
+  }
+
+  /* FAQ & Footer */
+  .faq-question {
+    padding: 16px 18px;
+    font-size: 0.94rem;
+  }
+  .faq-item.active .faq-answer {
+    padding: 14px 18px 18px;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Modals & Floating Widgets */
+  .modal-overlay {
+    padding: 12px;
   }
   .modal-body {
     grid-template-columns: 1fr;
   }
-  .footer-top {
-    grid-template-columns: 1fr;
+  .modal-media {
+    padding: 16px;
   }
-  .vip-box {
-    padding: 28px 18px;
+  .modal-media img {
+    max-height: 230px;
+  }
+  .modal-content {
+    padding: 20px 16px;
+  }
+  .modal-content .product-name {
+    font-size: 1.25rem;
   }
   .luxury-toast {
-    bottom: 85px;
-    left: 14px;
-    right: 14px;
+    bottom: 82px;
+    left: 12px;
+    right: 12px;
     max-width: none;
   }
   .floating-whatsapp {
@@ -3003,5 +3278,36 @@ ul {
   }
   .whatsapp-bubble-msg {
     display: none;
+  }
+}
+
+@media (max-width: 440px) {
+  .brand-title {
+    font-size: 0.92rem;
+  }
+  .brand-tagline {
+    display: none;
+  }
+  .btn-header-cta svg {
+    display: none;
+  }
+  .btn-header-cta {
+    padding: 7px 10px;
+    font-size: 0.70rem;
+  }
+  .hero-trust-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .trust-item {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .trust-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 }
