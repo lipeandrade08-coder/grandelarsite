@@ -212,22 +212,72 @@
     }
   });
 
-  // ── 5. Pausa o vídeo do espaço quando sair da tela ──────────────────────────
-  var espacoVideo = document.getElementById('espaco-video');
-  if (espacoVideo) {
+  // ── 5. Controle Inteligente dos Vídeos (Autoplay Muted + Botão de Som) ────
+  var storeVideos = document.querySelectorAll('.store-video');
+  if (storeVideos.length > 0) {
     var videoObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
+          var video = entry.target;
           if (entry.isIntersecting) {
-            espacoVideo.play().catch(function () {});
+            video.play().catch(function () {});
           } else {
-            espacoVideo.pause();
+            video.pause();
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.15 }
     );
 
-    videoObserver.observe(espacoVideo);
+    storeVideos.forEach(function (video) {
+      videoObserver.observe(video);
+
+      // Toque no vídeo: alternar play/pause
+      video.addEventListener('click', function () {
+        if (video.paused) {
+          video.play().catch(function () {});
+        } else {
+          video.pause();
+        }
+      });
+    });
+
+    // Botões de Ativar/Desativar Som
+    document.querySelectorAll('.video-card').forEach(function (card) {
+      var video = card.querySelector('.store-video');
+      var btnSound = card.querySelector('.video-sound-btn');
+      var iconMuted = card.querySelector('.sound-icon-muted');
+      var iconOn = card.querySelector('.sound-icon-on');
+
+      if (btnSound && video) {
+        btnSound.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (video.muted) {
+            // Muta todos os outros vídeos antes de ligar o som deste
+            storeVideos.forEach(function (other) {
+              if (other !== video) {
+                other.muted = true;
+                var otherCard = other.closest('.video-card');
+                if (otherCard) {
+                  var m = otherCard.querySelector('.sound-icon-muted');
+                  var o = otherCard.querySelector('.sound-icon-on');
+                  if (m) m.style.display = 'inline-flex';
+                  if (o) o.style.display = 'none';
+                }
+              }
+            });
+
+            video.muted = false;
+            video.volume = 1.0;
+            if (iconMuted) iconMuted.style.display = 'none';
+            if (iconOn) iconOn.style.display = 'inline-flex';
+          } else {
+            video.muted = true;
+            if (iconMuted) iconMuted.style.display = 'inline-flex';
+            if (iconOn) iconOn.style.display = 'none';
+          }
+        });
+      }
+    });
   }
 })();

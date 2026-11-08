@@ -683,24 +683,134 @@ h2 {
   letter-spacing: 0.03em;
 }
 
-/* ── Vídeo Conheça Nosso Espaço ────────────────────────────── */
-.video-wrapper {
-  width: calc(100% - (var(--s-md) * 2));
-  max-width: 420px;
-  margin: 0 auto;
-  border-radius: var(--r-md);
-  overflow: hidden;
-  border: 1.5px solid var(--line);
-  box-shadow: var(--shadow);
-  background: var(--card);
-  position: relative;
+/* ── Vídeos do Showroom & Lojas (.videos-slider) ───────────── */
+.videos-slider {
+  padding-bottom: 24px;
 }
 
-.video-wrapper video {
+.videos-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  padding: 0 var(--_pad, 16px);
+}
+
+@media (min-width: 860px) {
+  .videos-track {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.video-card {
+  flex: 0 0 auto;
+  position: relative;
+  width: clamp(260px, 78vw, 360px);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1.5px solid rgba(41, 210, 32, 0.4);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.7),
+    0 0 28px rgba(41, 210, 32, 0.14);
+  background: var(--card);
+  scroll-snap-align: start;
+}
+
+.video-card video {
   display: block;
   width: 100%;
   aspect-ratio: 9 / 16;
   object-fit: cover;
+  background: #000;
+  cursor: pointer;
+}
+
+.video-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(1, 20, 9, 0.88);
+  border: 1px solid rgba(195, 185, 70, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--gold-bright);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.video-sound-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: rgba(1, 20, 9, 0.88);
+  border: 1px solid rgba(41, 210, 32, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.video-sound-btn:hover {
+  background: rgba(41, 210, 32, 0.22);
+  border-color: var(--green-soft);
+  transform: scale(1.05);
+}
+
+.video-sound-btn:active {
+  transform: scale(0.95);
+}
+
+.video-info {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(1, 20, 9, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(41, 210, 32, 0.35);
+  padding: 12px 14px;
+  border-radius: var(--r-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.video-info strong {
+  color: var(--white);
+  font-size: clamp(0.85rem, 2.5vw, 0.98rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.video-info span {
+  color: var(--green-soft);
+  font-size: clamp(0.72rem, 2vw, 0.82rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
 /* ── Cards de Unidades / Mapas (.map-cards-container) ──────── */
@@ -760,7 +870,14 @@ h2 {
   color: #000;
 }
 
-.map-card img {
+.map-card-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-decoration: none;
+}
+
+.map-card-link img {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -769,7 +886,7 @@ h2 {
   transition: transform 250ms ease;
 }
 
-.map-card:hover img {
+.map-card:hover .map-card-link img {
   transform: scale(1.02);
 }
 
@@ -778,12 +895,12 @@ h2 {
   inset: auto 14px 14px 14px;
   padding: 14px 16px;
   border-radius: 18px;
-  background: rgba(1, 20, 9, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(1, 20, 9, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(41, 210, 32, 0.35);
   display: grid;
-  gap: 4px;
+  gap: 5px;
   text-align: left;
   z-index: 3;
 }
@@ -795,16 +912,61 @@ h2 {
 
 .map-info span {
   color: var(--soft);
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   line-height: 1.35;
 }
 
-.map-info small {
-  color: var(--green-soft);
+.map-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.btn-gps {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-size: 0.74rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  margin-top: 2px;
+  text-decoration: none;
+  transition: transform 0.2s ease, filter 0.2s ease, background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-gps:hover {
+  transform: translateY(-2px);
+}
+
+.btn-gps:active {
+  transform: translateY(0);
+}
+
+.btn-gps--primary {
+  flex: 1;
+  min-width: 150px;
+  background: linear-gradient(135deg, #29d220 0%, #167a12 100%);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.btn-gps--primary:hover {
+  filter: brightness(1.15);
+}
+
+.btn-gps--waze {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(195, 185, 70, 0.55);
+  color: var(--gold-bright);
+}
+
+.btn-gps--waze:hover {
+  background: rgba(195, 185, 70, 0.2);
 }
 
 /* ── Avaliações Google (.review-card) ──────────────────────── */
@@ -1502,12 +1664,27 @@ h2 {
 }
 
 .popup-address-card {
+  display: block;
   background: rgba(41, 210, 32, 0.08);
-  border: 1px solid rgba(41, 210, 32, 0.32);
+  border: 1px solid rgba(41, 210, 32, 0.35);
   border-radius: 14px;
   padding: 10px 14px;
   margin-bottom: 10px;
   text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.popup-address-card:hover {
+  background: rgba(41, 210, 32, 0.18);
+  border-color: var(--green-soft);
+  transform: translateY(-2px);
+}
+
+.popup-address-card:active {
+  transform: translateY(0);
 }
 
 .popup-address-label {

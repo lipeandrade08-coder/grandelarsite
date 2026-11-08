@@ -68,18 +68,30 @@
           Showroom completo de <strong>Sofás, Salas de Jantar, Poltronas e Painéis</strong> a pronta entrega nas nossas <strong>2 unidades em Taubaté</strong>!
         </p>
 
-        <!-- Endereços em destaque -->
-        <div class="popup-address-card">
+        <!-- Endereços com rota direta no GPS -->
+        <a
+          href="https://www.google.com/maps/dir/?api=1&destination=Grande+Lar+M%C3%B3veis,+Rua+Bahia,+474+-+Vila+S%C3%A3o+Geraldo,+Taubat%C3%A9+-+SP"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="popup-address-card"
+          title="Abrir rota no GPS para a Unidade 1"
+        >
           <span class="popup-address-label">📍 Unidade 1 • Vila São Geraldo</span>
           <strong class="popup-address-street">Rua Bahia, 474 — Taubaté/SP</strong>
-          <span class="popup-address-neighborhood">Showroom Completo a Pronta Entrega</span>
-        </div>
+          <span class="popup-address-neighborhood">🚗 Toque para rota direta no GPS →</span>
+        </a>
 
-        <div class="popup-address-card">
+        <a
+          href="https://www.google.com/maps/dir/?api=1&destination=Grande+Lar+M%C3%B3veis,+Rodovia+Oswaldo+Cruz,+255+-+Bel%C3%A9m,+Taubat%C3%A9+-+SP"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="popup-address-card"
+          title="Abrir rota no GPS para a Unidade 2"
+        >
           <span class="popup-address-label">📍 Unidade 2 • Belém (a 300m da Dutra)</span>
           <strong class="popup-address-street">Rodovia Oswaldo Cruz, 255 — Taubaté/SP</strong>
-          <span class="popup-address-neighborhood">Amplo Estacionamento &amp; Fácil Acesso</span>
-        </div>
+          <span class="popup-address-neighborhood">🚗 Toque para rota direta no GPS →</span>
+        </a>
 
         <!-- Lista de diferenciais -->
         <ul class="popup-vantagens">
@@ -168,7 +180,7 @@
           <a href="#sofas-retrateis" class="category-pill">🛋️ Sofás Retráteis</a>
           <a href="#sofas-living" class="category-pill">✨ Canto, Ilha &amp; Living</a>
           <a href="#salas-jantar" class="category-pill">🍽️ Salas de Jantar &amp; Home</a>
-          <a href="#espaco" class="category-pill">🎥 Vídeo da Loja</a>
+          <a href="#espaco" class="category-pill">🎥 Vídeos da Loja</a>
           <a href="#unidades" class="category-pill">📍 Nossas 2 Lojas</a>
         </div>
       </nav>
@@ -839,87 +851,181 @@
       </section>
 
       <!-- ═══════════════════════════════════════════════════════
-           VÍDEO — CONHEÇA NOSSO ESPAÇO
+           VÍDEOS — SHOWROOM & MOVIMENTO DAS LOJAS
            ═══════════════════════════════════════════════════════ -->
-      <section class="section" id="espaco" aria-label="Conheça Nosso Espaço">
-        <h2>CONHEÇA NOSSO ESPAÇO</h2>
+      <section class="section" id="espaco" aria-label="Vídeos do Showroom e Lojas">
+        <h2>SHOWROOM EM VÍDEO</h2>
         <p class="section-subtitle">
-          Ambientes decorados para você sentir o conforto real de cada sofá e sala de jantar.
+          Veja nosso espaço por dentro e o movimento das nossas 2 lojas em Taubaté.
         </p>
-        <div class="video-wrapper">
-          <video
-            id="espaco-video"
-            src="assets/images/hero-video.mp4"
-            poster="assets/images/wa-ambiente-jantar-cristaleira.jpg"
-            autoplay
-            loop
-            muted
-            playsinline
-            preload="none"
-          >
-            Seu navegador não suporta a visualização deste vídeo.
-          </video>
+
+        <div class="slider-controls">
+          <button type="button" class="slider-nav-btn" data-slider-prev="slider-videos" aria-label="Vídeo anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <span class="slider-hint">← Arraste para ver os 2 vídeos →</span>
+          <button type="button" class="slider-nav-btn" data-slider-next="slider-videos" aria-label="Próximo vídeo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+
+        <div class="slider videos-slider" id="slider-videos">
+          <div class="slider-track videos-track">
+            
+            <!-- Vídeo 1: Tour Showroom -->
+            <div class="video-card">
+              <span class="video-tag">🎥 TOUR SHOWROOM</span>
+              <video
+                class="store-video"
+                src="assets/images/video-tour-loja.mp4"
+                poster="assets/images/thumb-video-tour.jpg"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="metadata"
+              >
+                Seu navegador não suporta a visualização deste vídeo.
+              </video>
+              <button type="button" class="video-sound-btn" aria-label="Ativar som do vídeo">
+                <span class="sound-icon-muted">🔇 Toque p/ Som</span>
+                <span class="sound-icon-on" style="display:none;">🔊 Som Ativo</span>
+              </button>
+              <div class="video-info">
+                <strong>Tour pelo Showroom</strong>
+                <span>Ambientes Reais em Taubaté</span>
+              </div>
+            </div>
+
+            <!-- Vídeo 2: Movimento das Lojas -->
+            <div class="video-card">
+              <span class="video-tag">🔥 NOSSAS LOJAS</span>
+              <video
+                class="store-video"
+                src="assets/images/video-movimento-loja.mp4"
+                poster="assets/images/thumb-video-movimento.jpg"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="metadata"
+              >
+                Seu navegador não suporta a visualização deste vídeo.
+              </video>
+              <button type="button" class="video-sound-btn" aria-label="Ativar som do vídeo">
+                <span class="sound-icon-muted">🔇 Toque p/ Som</span>
+                <span class="sound-icon-on" style="display:none;">🔊 Som Ativo</span>
+              </button>
+              <div class="video-info">
+                <strong>Sucesso em Taubaté</strong>
+                <span>2 Lojas com Pronta Entrega</span>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
       <!-- ═══════════════════════════════════════════════════════
-           COMO CHEGAR — NOSSAS 2 UNIDADES EM TAUBATÉ
+           COMO CHEGAR — NOSSAS 2 UNIDADES EM TAUBATÉ (GPS DIRETO)
            ═══════════════════════════════════════════════════════ -->
       <section class="section" id="unidades" aria-label="Como Chegar às Nossas 2 Lojas em Taubaté">
         <h2>NOSSAS 2 LOJAS EM TAUBATÉ</h2>
         <p class="section-subtitle">
-          Toque na unidade mais próxima de você para abrir a rota direto no Google Maps.
+          Toque para abrir a rota direta no seu GPS (Google Maps ou Waze).
         </p>
 
         <div class="map-cards-container">
 
           <!-- Unidade 1 — Vila São Geraldo -->
-          <a
-            class="map-card"
-            href="https://www.google.com/maps/search/?api=1&query=Rua+Bahia+474+Vila+Sao+Geraldo+Taubate+SP"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Abrir localização da Unidade 1 Vila São Geraldo no Google Maps"
-          >
-            <div class="map-card-tag">UNIDADE 1 • VILA SÃO GERALDO</div>
-            <img
-              src="assets/images/wa-fachada-showroom-1.jpg"
-              alt="Fachada da Loja Grande Lar Móveis Unidade 1 Vila São Geraldo"
-              width="900"
-              height="560"
-              loading="lazy"
-              decoding="async"
-            />
+          <article class="map-card">
+            <a
+              class="map-card-link"
+              href="https://www.google.com/maps/dir/?api=1&destination=Grande+Lar+M%C3%B3veis,+Rua+Bahia,+474+-+Vila+S%C3%A3o+Geraldo,+Taubat%C3%A9+-+SP"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir rota GPS para a Unidade 1 Vila São Geraldo no Google Maps"
+            >
+              <div class="map-card-tag">UNIDADE 1 • VILA SÃO GERALDO</div>
+              <img
+                src="assets/images/wa-fachada-showroom-1.jpg"
+                alt="Fachada da Loja Grande Lar Móveis Unidade 1 Vila São Geraldo"
+                width="900"
+                height="560"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
             <div class="map-info">
               <strong>Grande Lar — Vila São Geraldo</strong>
-              <span>Rua Bahia, 474 — Vila São Geraldo, Taubaté/SP • CEP 12062-100</span>
-              <small>📍 Toque para abrir no Google Maps</small>
+              <span>Rua Bahia, 474 — Vila São Geraldo, Taubaté/SP</span>
+              <div class="map-actions">
+                <a
+                  class="btn-gps btn-gps--primary"
+                  href="https://www.google.com/maps/dir/?api=1&destination=Grande+Lar+M%C3%B3veis,+Rua+Bahia,+474+-+Vila+S%C3%A3o+Geraldo,+Taubat%C3%A9+-+SP"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>Abrir no Google Maps</span>
+                </a>
+                <a
+                  class="btn-gps btn-gps--waze"
+                  href="https://waze.com/ul?q=Rua%20Bahia%20474%20Taubate&navigate=yes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm3.5 13.5a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5zm-7 0a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5z"/></svg>
+                  <span>Waze</span>
+                </a>
+              </div>
             </div>
-          </a>
+          </article>
 
           <!-- Unidade 2 — Belém (a 300m da Dutra) -->
-          <a
-            class="map-card map-card--nova"
-            href="https://www.google.com/maps/search/?api=1&query=Rodovia+Oswaldo+Cruz+255+Belem+Taubate+SP"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Abrir localização da Unidade 2 Belém no Google Maps"
-          >
-            <div class="map-card-tag map-card-tag--nova">🔥 UNIDADE 2 • A 300M DA DUTRA</div>
-            <img
-              src="assets/images/wa-fachada-showroom-2.jpg"
-              alt="Fachada da Loja Grande Lar Móveis Unidade 2 Belém"
-              width="900"
-              height="560"
-              loading="lazy"
-              decoding="async"
-            />
+          <article class="map-card map-card--nova">
+            <a
+              class="map-card-link"
+              href="https://www.google.com/maps/dir/?api=1&destination=Grande+Lar+M%C3%B3veis,+Rodovia+Oswaldo+Cruz,+255+-+Bel%C3%A9m,+Taubat%C3%A9+-+SP"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir rota GPS para a Unidade 2 Belém no Google Maps"
+            >
+              <div class="map-card-tag map-card-tag--nova">🔥 UNIDADE 2 • A 300M DA DUTRA</div>
+              <img
+                src="assets/images/wa-fachada-showroom-2.jpg"
+                alt="Fachada da Loja Grande Lar Móveis Unidade 2 Belém"
+                width="900"
+                height="560"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
             <div class="map-info">
               <strong>Grande Lar — Unidade Belém</strong>
-              <span>Rodovia Oswaldo Cruz, 255 — Belém, Taubaté/SP (a 300m da Via Dutra)</span>
-              <small>📍 Toque para abrir no Google Maps</small>
+              <span>Rodovia Oswaldo Cruz, 255 — Belém, Taubaté/SP (a 300m da Dutra)</span>
+              <div class="map-actions">
+                <a
+                  class="btn-gps btn-gps--primary"
+                  href="https://www.google.com/maps/dir/?api=1&destination=Grande+Lar+M%C3%B3veis,+Rodovia+Oswaldo+Cruz,+255+-+Bel%C3%A9m,+Taubat%C3%A9+-+SP"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>Abrir no Google Maps</span>
+                </a>
+                <a
+                  class="btn-gps btn-gps--waze"
+                  href="https://waze.com/ul?q=Rodovia%20Oswaldo%20Cruz%20255%20Taubate&navigate=yes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm3.5 13.5a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5zm-7 0a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5z"/></svg>
+                  <span>Waze</span>
+                </a>
+              </div>
             </div>
-          </a>
+          </article>
 
         </div>
       </section>
@@ -1005,7 +1111,11 @@
 
       <footer class="site-footer">
         <p><strong>GRANDE LAR MÓVEIS TAUBATÉ</strong> • Black Friday Até 70% de Desconto</p>
-        <p>Unidade 1: Rua Bahia, 474 - Vila São Geraldo • Unidade 2: Rod. Oswaldo Cruz, 255 - Belém (a 300m da Dutra)</p>
+        <p>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Grande+Lar+M%C3%B3veis,+Rua+Bahia,+474+-+Vila+S%C3%A3o+Geraldo,+Taubat%C3%A9+-+SP" target="_blank" rel="noopener noreferrer" style="color:var(--green-soft); text-decoration:none; font-weight:700;">📍 Loja 1: Rua Bahia, 474 - Vila São Geraldo (Abrir GPS)</a>
+          <br>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Grande+Lar+M%C3%B3veis,+Rodovia+Oswaldo+Cruz,+255+-+Bel%C3%A9m,+Taubat%C3%A9+-+SP" target="_blank" rel="noopener noreferrer" style="color:var(--gold-bright); text-decoration:none; font-weight:700;">📍 Loja 2: Rod. Oswaldo Cruz, 255 - Belém (Abrir GPS)</a>
+        </p>
       </footer>
 
     </main>
