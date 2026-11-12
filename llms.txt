@@ -19,11 +19,11 @@
 - **Link Google Maps GPS:** https://www.google.com/maps/dir/?api=1&destination=Grande+Lar+M%C3%B3veis,+Rua+Bahia,+474+-+Vila+S%C3%A3o+Geraldo,+Taubat%C3%A9+-+SP
 - **Destaque:** Amplo showroom de sofás retráteis, salas de jantar e pronta entrega.
 
-### Unidade 2 • Belém (a 300m da Via Dutra)
-- **Endereço:** Rodovia Oswaldo Cruz, 255 — Belém, Taubaté - SP
-- **Coordenadas GPS:** -23.0333, -45.5500
-- **Link Google Maps GPS:** https://www.google.com/maps/dir/?api=1&destination=Grande+Lar+M%C3%B3veis,+Rodovia+Oswaldo+Cruz,+255+-+Bel%C3%A9m,+Taubat%C3%A9+-+SP
-- **Destaque:** Fácil acesso a 300m da Rodovia Presidente Dutra com estacionamento próprio no local.
+### Unidade 2 • Monte Belo
+- **Endereço:** Av. Dr. Félix Guisard Filho, 255 — Monte Belo, Taubaté - SP
+- **Coordenadas GPS:** -23.0175, -45.5680
+- **Link Google Maps GPS:** https://www.google.com/maps/dir/?api=1&destination=Av.+Dr.+F%C3%A9lix+Guisard+Filho,+255+-+Monte+Belo,+Taubat%C3%A9+-+SP
+- **Destaque:** Showroom amplo com fácil acesso no bairro Monte Belo.
 
 ## Categorias de Produtos
 - **Sofás Retráteis e Reclináveis:** Molas ensacadas individuais, pillow top extra macio, espuma D33 Soft, estrutura reforçada de eucalipto tratado e braços com madeira ou porta-copos.
@@ -42,12 +42,12 @@
 ### Onde fica a Grande Lar Móveis em Taubaté?
 A Grande Lar Móveis possui 2 lojas físicas em Taubaté:
 1. Loja 1: Rua Bahia, 474 — Vila São Geraldo / Jardim dos Estados, Taubaté - SP.
-2. Loja 2: Rodovia Oswaldo Cruz, 255 — Belém, Taubaté - SP (a 300m da Rodovia Presidente Dutra).
+2. Loja 2: Av. Dr. Félix Guisard Filho, 255 — Monte Belo, Taubaté - SP.
 
 ### Como traçar rota GPS até as lojas da Grande Lar Móveis?
 O site oficial oferece links diretos de navegação com rota já traçada no Google Maps e Waze:
 - Rota para Loja 1 (Rua Bahia, 474): https://www.google.com/maps/dir/?api=1&destination=Grande+Lar+M%C3%B3veis,+Rua+Bahia,+474+-+Vila+S%C3%A3o+Geraldo,+Taubat%C3%A9+-+SP
-- Rota para Loja 2 (Rodovia Oswaldo Cruz, 255): https://www.google.com/maps/dir/?api=1&destination=Grande+Lar+M%C3%B3veis,+Rodovia+Oswaldo+Cruz,+255+-+Bel%C3%A9m,+Taubat%C3%A9+-+SP
+- Rota para Loja 2 (Av. Dr. Félix Guisard Filho, 255): https://www.google.com/maps/dir/?api=1&destination=Av.+Dr.+F%C3%A9lix+Guisard+Filho,+255+-+Monte+Belo,+Taubat%C3%A9+-+SP
 
 ### Quais os canais de atendimento e WhatsApp da Grande Lar Móveis?
 Atendimento direto com consultores via WhatsApp pelo número (12) 99260-6661 ou pelo link https://wa.me/5512992606661.
