@@ -34,5 +34,5 @@ User-agent: Applebot-Extended
 Allow: /
 
 # Sitemap oficial
-Sitemap: https://grandelarmoveis.com.br/sitemap.xml
+Sitemap: https://www.agrandelar.com.br/sitemap.xml
 
